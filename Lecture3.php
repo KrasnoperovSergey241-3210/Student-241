@@ -23,4 +23,14 @@ class classA extends AbstractClass {
 
 $ob = new classA(5);
 $ob->printValue();
+
+// ClassA::printValue(); статический вызов
+
+class A {
+    public static function test(int $x) {
+        echo $x;
+    }
+}
+
+A::text(6);
 ?>
