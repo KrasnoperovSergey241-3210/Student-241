@@ -10,7 +10,7 @@ abstract class AbstractClass {
 
 // $abstract = new AbstractClass; ошибка
 
-class classA extends AbsrtactClass {
+class classA extends AbstractClass {
     private $val;
     public function __construct(int $val) {
         $this->val = $val;
