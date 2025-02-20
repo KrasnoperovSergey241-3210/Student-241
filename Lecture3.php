@@ -35,4 +35,24 @@ class A {
 echo '<BR>';
 
 A::test(6);
+
+echo '<BR>';
+
+class User {
+    private $role;
+    private $name;
+
+    public function __construct(string $name, string $role) {
+        $this->role = $role;
+        $this->name = $name;
+    }
+
+    public static function createAdmin(string $name) {
+        return new self('admin', $name);
+    }
+}
+
+$user = User::createAdmin('Ivan');
+var_dump($user);
+
 ?>
