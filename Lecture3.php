@@ -32,5 +32,5 @@ class A {
     }
 }
 
-A::text(6);
+A::test(6);
 ?>
