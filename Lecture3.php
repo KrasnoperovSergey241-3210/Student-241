@@ -53,6 +53,6 @@ class User {
 }
 
 $user = User::createAdmin('Ivan');
-var_dump($user);
+echo $user;
 
 ?>
