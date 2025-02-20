@@ -32,5 +32,7 @@ class A {
     }
 }
 
+echo '<BR>';
+
 A::test(6);
 ?>
