@@ -65,14 +65,15 @@
 .button.equals:hover {
     background-color: #45a049;
 }
-.button.clear {
+
+#clear {
     grid-row: 6;
     grid-column: 3/5;
-    background-color: #f44336;
+    background-color: #660033;
     color: white;
 }
-.button.clear:hover {
-    background-color: #e53935;
+#clear:hover {
+    background-color: #52022a;
 }
 
 :root {
