@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel='stylesheet' href="style.css">
+</head>
+<body>
+    <header>
+        <a href='http://localhost/student-241/Calculator/index.php'><img src='mospolytech_logo_white.png' alt='Логотип Мосполитеха.'></a>
+        <p class='header-text'>Calculator</p>
+    </header>
+    <main>
+        <section class="section fade-in">
+            <h1>Calculator!</h1>
+            <div class="calculator">
+                <div class="buttons">
+                    <input type="text" class="display" id="display" readonly>
+                    <button type="button" class="button" onclick="appendToDisplay('1')">1</button>
+                    <button type="button" class="button" onclick="appendToDisplay('2')">2</button>
+                    <button type="button" class="button" onclick="appendToDisplay('3')">3</button>
+                    <button type="button" class="button" onclick="appendToDisplay('+')">+</button>
+                    <button type="button" class="button" onclick="appendToDisplay('4')">4</button>
+                    <button type="button" class="button" onclick="appendToDisplay('5')">5</button>
+                    <button type="button" class="button" onclick="appendToDisplay('6')">6</button>
+                    <button type="button" class="button" onclick="appendToDisplay('-')">-</button>
+                    <button type="button" class="button" onclick="appendToDisplay('7')">7</button>
+                    <button type="button" class="button" onclick="appendToDisplay('8')">8</button>
+                    <button type="button" class="button" onclick="appendToDisplay('9')">9</button>
+                    <button type="button" class="button" onclick="appendToDisplay('*')">*</button>
+                    <button type="button" class="button" onclick="appendToDisplay('0')">0</button>
+                    <button type="button" class="button" onclick="appendToDisplay('(')">(</button>
+                    <button type="button" class="button" onclick="appendToDisplay(')')">)</button>
+                    <button type="button" class="button" onclick="appendToDisplay('/')">/</button>
+                    <button type="button" class="button clear" onclick="clearDisplay()">C</button>
+                    <button type="button" class="button equals" onclick="calculate()">=</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="fade-in">
+        <a href='http://localhost/student-241/Calculator/index.php'><img class='footer-img' src='mospolytech_logo_white.png' alt='Логотип Мосполитеха.'></a>
+            <ul class='footer-ul'>
+                <li class='footer-ul-title'>
+                    Другие продукты:
+                </li>
+                <li>
+                    <a href='https://nya-kawaii-senpai.netlify.app/'>Сайт на тему сёрфинга</a>
+                </li>
+                <li>
+                    <a href='https://greed-kawaii-senpai.netlify.app'>Сайт с картинами</a>
+                </li>
+                <li>
+                    <a href='https://demo-kawaii-senpai.netlify.app'>Сайт для избранных</a>
+                </li>
+            </ul>
+    </footer>
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            const expression = document.getElementById('display').value;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'calculate.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Обновляем поле ввода результатом
+                    document.getElementById('display').value = xhr.responseText;
+                }
+            };
+            xhr.send('expression=' + encodeURIComponent(expression));
+        }
+    </script>
+</body>
+</html>
