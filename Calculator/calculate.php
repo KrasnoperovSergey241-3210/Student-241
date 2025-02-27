@@ -8,6 +8,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    if (strpos($expression, '/0') !== false) {
+        echo "Ошибка: на ноль делить нельзя.";
+        exit;
+    }
+
+    if (preg_match('/^[()+\-\/*\s]+$/', $expression)) {
+        echo "Ошибка: введите числа для расчёта.";
+        exit;
+    }
+
+    if (preg_match('/\)[123456789\/*]/', $expression)) {
+        echo "Ошибка: Недопустимые символы в выражении.";
+        exit;
+    }
+
     // Вычисление выражения
     function calculate($expression) {
         // Удаляем все пробелы
