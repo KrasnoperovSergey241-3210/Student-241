@@ -18,8 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    if (preg_match('/\)[123456789\/*]/', $expression)) {
+    if (preg_match('/\)[0-9]/', $expression)) {
         echo "Ошибка: Недопустимые символы в выражении.";
+        exit;
+    }
+
+    if (preg_match('/[0-9]\(/', $expression)) {
+        echo "Ошибка: Недопустимые символы в выражении.";
+        exit;
+    }
+
+    if (preg_match('/^(\D\d|\d\D)$/', $expression)) {
+        echo "Ошибка: Недопустимые символы в выражении.";
+        exit;
+    }
+
+    if (preg_match('/[+\-*\/]{2}/', $expression)) {
+        echo "Ошибка: строка содержит два знака подряд.";
         exit;
     }
 
