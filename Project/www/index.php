@@ -27,6 +27,3 @@
 
     $user = new src\Models\Users\User('Ivan');
     $article = new src\Models\Articles\Article('title', 'text', $user);
-
-    // var_dump($user);
-    // var_dump($article);
