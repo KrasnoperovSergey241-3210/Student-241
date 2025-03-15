@@ -8,5 +8,7 @@ if (strpos($present_uri, '/hello/') !== false) {
     require dirname(__DIR__) . '/header.php';
 }
 ?>
-<h3 style='padding-top: 20px; text-align: center;'>Hello, <?= htmlspecialchars($name); ?>!</h5>
+<body style='background-color: black;'>
+    <h3 style='padding-top: 20px; text-align: center; color: white;'>Hello, <?= htmlspecialchars($name); ?>!</h5>
+</body>
 <?php require dirname(__DIR__) . '/footer.php'; ?>

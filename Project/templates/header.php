@@ -10,18 +10,18 @@
 </head>
 <body>
 <header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav style='background-image: linear-gradient( #75188f,  #410a47); background-color: none; border-radius: 50px; height: 60px;' class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul style='width: 300px; display: flex; justify-content: space-between;' class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?= $_SERVER['SCRIPT_NAME']; ?>">Главная</a>
+          <a style='color: white;' class="nav-link active" aria-current="page" href="<?= $_SERVER['SCRIPT_NAME']; ?>">Главная</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= dirname($_SERVER['SCRIPT_NAME']); ?>/hello/Astolfo">Привет</a>
+          <a style='color: white;' class="nav-link" href="<?= dirname($_SERVER['SCRIPT_NAME']); ?>/hello/Astolfo">Привет</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= dirname($_SERVER['SCRIPT_NAME']); ?>/bye/Felix_Argyle">Пока</a>
+          <a style='color: white;' class="nav-link" href="<?= dirname($_SERVER['SCRIPT_NAME']); ?>/bye/Felix_Argyle">Пока</a>
         </li>
       </ul>
     </div>
